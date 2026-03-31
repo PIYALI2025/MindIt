@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MindIt | Performance Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 40px; background: #f8f9fa; }
+        .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .stat-box { background: #eef2ff; padding: 15px; border-radius: 8px; margin-bottom: 10px; text-align: center; }
+        .stat-box h2 { margin: 5px 0; color: #4338ca; }
+        input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;}
+        button { width: 100%; padding: 12px; background: #4338ca; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #3730a3; }
+    </style>
+</head>
+<body>
+    <h1>MindIt Intelligence</h1>
+    <div class="grid">
+        <div class="card">
+            <h3>Add New Bill</h3>
+            <input type="text" id="name" placeholder="Subscription Name (e.g. Netflix)">
+            <input type="number" id="price" placeholder="Price (e.g. 199)">
+            <select id="category">
+                <option value="Entertainment">Entertainment</option>
+                <option value="Work">Work</option>
+                <option value="Utility">Utility</option>
+            </select>
+            <input type="date" id="date">
+            <button onclick="addBill()">Add to Database</button>
+        </div>
+
+        <div class="card">
+            <h3>Performance Metrics</h3>
+            <div style="display: flex; gap: 15px;">
+                <div class="stat-box" style="flex: 1;">
+                    <small>Monthly Burn</small>
+                    <h2 id="burn-val">₹0</h2>
+                </div>
+                <div class="stat-box" style="flex: 1;">
+                    <small>Active Trials</small>
+                    <h2 id="trial-val">0</h2>
+                </div>
+            </div>
+            <div id="status-list" style="margin-top: 20px;">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
